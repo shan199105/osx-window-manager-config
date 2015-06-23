@@ -1,0 +1,75 @@
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+
+# Spaces Management
+bind 1:cmd              shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-to-space.rb 1'
+bind 2:cmd              shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-to-space.rb 2'
+bind 3:cmd              shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-to-space.rb 3'
+bind 4:cmd              shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-to-space.rb 4'
+bind 5:cmd              shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-to-space.rb 5'
+bind 6:cmd              shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-to-space.rb 6'
+bind 7:cmd              shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-to-space.rb 7'
+bind 8:cmd              shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-to-space.rb 8'
+bind 9:cmd              shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-to-space.rb 9'
+
+# Window Spaces Management
+bind 1:shift;cmd        shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-win-to-space.rb 1'
+bind 2:shift;cmd        shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-win-to-space.rb 2'
+bind 3:shift;cmd        shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-win-to-space.rb 3'
+bind 4:shift;cmd        shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-win-to-space.rb 4'
+bind 5:shift;cmd        shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-win-to-space.rb 5'
+bind 6:shift;cmd        shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-win-to-space.rb 6'
+bind 7:shift;cmd        shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-win-to-space.rb 7'
+bind 8:shift;cmd        shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-win-to-space.rb 8'
+bind 9:shift;cmd        shell path:~/ '/Users/rz/osx-window-manager-config/totalspaces2-script/move-win-to-space.rb 9'
+
+# Resize Bindings
+bind l:alt              resize +10% +0
+bind h:alt              resize -10% +0
+bind k:alt              resize +0   -10%
+bind j:alt              resize +0   +10%
+bind l:ctrl;alt         resize -10% +0 bottom-right
+bind h:ctrl;alt         resize +10% +0 bottom-right
+bind k:ctrl;alt         resize +0   +10% bottom-right
+bind j:ctrl;alt         resize +0   -10% bottom-right
+
+# Full Screen
+bind f:ctrl;cmd         ${full}
+
+# Push Bindings
+bind l:shift;cmd        push right bar-resize:screenSizeX/2
+bind h:shift;cmd        push left  bar-resize:screenSizeX/2
+bind k:shift;cmd        push up    bar-resize:screenSizeY/2
+bind j:shift;cmd        push down  bar-resize:screenSizeY/2
+
+# Nudge Bindings
+bind l:shift;alt        nudge +10% +0
+bind h:shift;alt        nudge -10% +0
+bind k:shift;alt        nudge +0   -10%
+bind j:shift;alt        nudge +0   +10%
+
+# Throw Bindings
+bind 1:ctrl;alt         throw 0 resize
+bind 2:ctrl;alt         throw 1 resize
+bind 3:ctrl;alt         throw 2 resize
+bind l:ctrl;alt;cmd     throw right resize
+bind h:ctrl;alt;cmd     throw left  resize
+bind k:ctrl;alt;cmd     throw up    resize
+bind j:ctrl;alt;cmd     throw down  resize
+
+# Focus Bindings
+bind l:cmd              focus right
+bind h:cmd              focus left
+bind k:cmd              focus up
+bind j:cmd              focus down
+bind k:cmd;ctrl         focus behind
+bind j:cmd;ctrl         focus behind
+
+# Window Hints
+bind esc:cmd            hint
