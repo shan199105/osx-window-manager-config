@@ -20,20 +20,26 @@ def main()
   secondDisplayID = displayList[1][:display_id];
 
   to_space = ARGV[0].to_i
-  current_space = TotalSpaces2.current_space
+  current_space = TotalSpaces2.current_space_on_display(secondDisplayID)
   main_display_id = TotalSpaces2.main_display[:display_id]
 
   if front_windows?
-    window_id = get_front_window_id(current_space, main_display_id)
+    window_id = get_front_window_id(current_space, secondDisplayID)
     #TotalSpaces2.move_window_to_space(window_id, to_space)
     TotalSpaces2.move_window_to_space_on_display(window_id, to_space, secondDisplayID)
 
   end
 
   if front_windows?
-    window_id = get_front_window_id(current_space, main_display_id)
+    window_id = get_front_window_id(current_space, secondDisplayID)
     TotalSpaces2.set_front_window(window_id)
   end
+end
+
+def test()
+
+  windows = TotalSpaces2.window_list();
+  puts windows;
 end
 
 main
